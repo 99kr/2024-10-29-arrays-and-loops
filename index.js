@@ -119,6 +119,270 @@ exercices[15] = function () {
 	console.log(players) // ['Zlatan', 'Ronaldinho', 'Romario', 'Maradona']
 }
 
+// Copying methods
+
+exercices[16] = function () {
+	const players = ['Zlatan', 'Ronaldinho', 'Romario', 'Maradona']
+	const firstThreePlayers = players.slice(0, 3) // Start at index 0
+	// and stop at index 3 (exclusive), so it will slice indexes, 0, 1 and 2
+	// of from the original array then return
+	// a shallow copy of the array after modifications
+	// since it is a so called "copying method" and not a
+	// "mutating method" like the other ones we've used so far.
+	console.log(firstThreePlayers) // ['Zlatan', 'Ronaldinho', 'Romario']
+}
+
+exercices[17] = function () {
+	const players = ['Zlatan', 'Ronaldinho', 'Romario', 'Maradona']
+	const newPlayers = players.slice(2)
+	console.log(newPlayers) // ['Romario', 'Maradona']
+	console.log(players) // ['Zlatan', 'Ronaldinho', 'Romario', 'Maradona']
+}
+
+exercices[18] = function () {
+	const players = ['Zlatan', 'Ronaldinho', 'Romario', 'Maradona']
+	const result = players.with(1, 'Mbappé')
+	console.log(result) // ['Zlatan', 'Mbappé', 'Romario', 'Maradona']
+	console.log(players) // Isn't affected
+}
+
+// Loops
+
+exercices[19] = function () {
+	const numbers = [5, 8, 12, 20, 3]
+
+	for (let i = 0; i < numbers.length; i++) {
+		console.log(numbers[i])
+	}
+}
+
+exercices[20] = function () {
+	const numbers = [5, 8, 12, 20, 3]
+	let sum = 0
+
+	for (let i = 0; i < numbers.length; i++) {
+		sum += numbers[i]
+	}
+
+	console.log(sum) // 48
+}
+
+exercices[21] = function () {
+	const numbers = [5, 8, 12, 20, 3]
+	let biggestNumber = null
+
+	for (let i = 0; i < numbers.length; i++) {
+		const number = numbers[i]
+
+		// if biggestNumber is not yet set,
+		// (could technically set it to the first element of the array,
+		// and then start from index 1) OR if current number is
+		// greater than biggestNumber so far
+		if (biggestNumber == null || number > biggestNumber) {
+			biggestNumber = number
+		}
+	}
+
+	console.log(biggestNumber) // 20
+}
+
+exercices[22] = function () {
+	const numbers = [5, 8, 12, 20, 3]
+	const doubledNumbers = []
+
+	for (let i = 0; i < numbers.length; i++) {
+		const doubledNumber = numbers[i] * 2
+		doubledNumbers[i] = doubledNumber
+	}
+
+	console.log(doubledNumbers) // [10, 16, 24, 40, 6]
+}
+
+exercices[23] = function () {
+	const numbers = [5, 8, 12, 20, 3]
+	let sum = 0
+
+	for (let i = 0; i < numbers.length; i++) {
+		sum += numbers[i]
+	}
+
+	const averageValue = sum / numbers.length
+	console.log(averageValue) // 9.6
+}
+
+exercices[24] = function () {
+	const numbers = [5, 8, 12, 20, 3]
+	let smallestNumber = null
+
+	for (let i = 0; i < numbers.length; i++) {
+		const number = numbers[i]
+
+		if (smallestNumber == null || number < smallestNumber) {
+			smallestNumber = number
+		}
+	}
+
+	console.log(smallestNumber) // 3
+}
+
+exercices[25] = function () {
+	const mixedNumbers = [3, -5, 12, -1, 8, -6]
+	const positiveNumbers = []
+
+	for (let i = 0; i < mixedNumbers.length; i++) {
+		const number = mixedNumbers[i]
+
+		if (number > 0) {
+			positiveNumbers.push(number)
+		}
+	}
+
+	console.log(positiveNumbers) // [3, 12, 8]
+}
+
+exercices[26] = function () {
+	const mixedNumbers = [3, -5, 12, -1, 8, -6]
+
+	for (const number of mixedNumbers) {
+		if (number > 0) {
+			console.log(number)
+		}
+	} // 3  12  8
+}
+
+exercices[27] = function () {
+	const numbers = [5, 8, 12, 20, 3]
+	let index = 0
+
+	while (index < numbers.length) {
+		const number = numbers[index]
+
+		if (number > 10) {
+			break
+		}
+
+		index++
+	}
+
+	console.log(index) // Stops at index 2, since it's value is 12 (>10)
+}
+
+exercices[28] = function () {
+	const mixedNumbers = [3, -5, 12, -1, 8, -6]
+	let index = 0
+	let amountOfNegatives = 0
+
+	while (index < mixedNumbers.length) {
+		const number = mixedNumbers[index]
+
+		if (number < 0) {
+			amountOfNegatives++
+		}
+
+		index++
+	}
+
+	console.log(amountOfNegatives) // 3
+}
+
+exercices[29] = function () {
+	const words = ['banana', 'apple', 'kiwi', 'strawberry', 'peach']
+
+	for (const word of words) {
+		console.log(`${word} (${word.length})`) // for example: banana (6)
+	}
+}
+
+exercices[30] = function () {
+	const words = ['banana', 'apple', 'kiwi', 'strawberry', 'peach']
+	let newWord = ''
+
+	for (const word of words) {
+		newWord += word[0] // add first character to newWord
+	}
+
+	console.log(newWord) // baksp
+}
+
+exercices[31] = function () {
+	const numbers = [5, 8, 12, 20, 3]
+	let index = 0
+	let sum = 0
+
+	while (index < numbers.length) {
+		const number = numbers[index]
+		console.log(number)
+
+		sum += number
+		if (sum > 25) {
+			break
+		}
+
+		index++
+	}
+
+	console.log('stopped at', index) // stopped at index 3
+}
+
+exercices[32] = function () {
+	const mixedNumbers = [3, -5, 12, -1, 8, -6]
+	let sum = 0
+
+	for (const number of mixedNumbers) {
+		sum += number
+	}
+
+	console.log(sum) // 11
+}
+
+exercices[33] = function () {
+	const temperatures = [15, 22, 19, 30, 28, 18, 25]
+	let highestTemperature = null
+	let highestTemperatureIndex = -1
+
+	for (let i = 0; i < temperatures.length; i++) {
+		const temperature = temperatures[i]
+
+		if (highestTemperature == null || temperature > highestTemperature) {
+			highestTemperature = temperature
+			highestTemperatureIndex = i
+		}
+	}
+
+	console.log(`${highestTemperature} at index ${highestTemperatureIndex}`)
+}
+
+exercices[34] = function () {
+	const words = ['banana', 'apple', 'kiwi', 'strawberry', 'peach']
+	let wordsSurpassing5Characters = 0
+
+	for (const word of words) {
+		if (word.length > 5) {
+			wordsSurpassing5Characters++
+		}
+	}
+
+	console.log(wordsSurpassing5Characters) // 2
+}
+
+exercices[35] = function () {
+	const numbers = [5, 8, 12, 20, 3]
+	let index = 0
+
+	while (index < numbers.length) {
+		const number = numbers[index]
+
+		if (number % 2 == 1) {
+			break // is odd
+		}
+
+		index++
+	}
+
+	console.log(`index ${index} is odd (${numbers[index]})`)
+	// index 0 is odd (5)
+}
+
 for (const exercice of Object.keys(exercices)) {
 	console.group(`Exercice ${exercice}`)
 	exercices[exercice]()
