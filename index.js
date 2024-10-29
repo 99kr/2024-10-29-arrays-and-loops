@@ -350,6 +350,7 @@ exercices[33] = function () {
 	}
 
 	console.log(`${highestTemperature} at index ${highestTemperatureIndex}`)
+	// 30 at index 3
 }
 
 exercices[34] = function () {
